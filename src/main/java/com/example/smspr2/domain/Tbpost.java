@@ -1,10 +1,7 @@
 package com.example.smspr2.domain;
 
 import com.example.smspr2.dto.TbpostDto;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -16,8 +13,15 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 @Getter
+@Table(indexes = {
+        @Index(columnList = "deleted")
+        ,@Index(columnList = "process")
+        ,@Index(columnList = "createdAt")
+        ,@Index(columnList = "modifiedAt")
+})
 @Entity
 public class Tbpost extends AuditingFields{
+
     @Setter @Column (nullable = false,length=400)private String title;
     @Setter @Column (nullable=false,length=400) private String author;
     @Setter @Column(nullable = false,length=4000) String content;
@@ -28,7 +32,7 @@ public class Tbpost extends AuditingFields{
         this.content = content;
     }
 
-    public Tbpost() {
+    protected Tbpost() {
     }
 
     public static Tbpost of(String title, String author, String content) {
