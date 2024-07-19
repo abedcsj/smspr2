@@ -35,7 +35,7 @@ public class TbpostServiceImpl implements TbpostService {
         if(list == null){ throw new RuntimeException("no data"); }
         return list;
 
-    };
+    }
 
 }
 

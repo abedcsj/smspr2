@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Map;
 @Service
 public interface DefaultService {
-    public Map<String,Object>create(@RequestParam Map<String,Object> map);
-    public Map<String,Object> list();
+    Map<String,Object>create(@RequestParam Map<String,Object> map);
+    Map<String,Object>list();
 }
