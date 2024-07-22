@@ -10,4 +10,5 @@ public interface TbpostService {
    TbpostDto.CreateResDto create(TbpostDto.CreateReqDto param);
    TbpostDto.SelectResDto detail(TbpostDto.SelectReqDto param);
    List<TbpostDto.SelectResDto> list(TbpostDto.ListReqDto param);
+   TbpostDto.PagedListResDto pagedList(TbpostDto.PagedListReqDto param);
 }
