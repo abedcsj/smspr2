@@ -10,4 +10,5 @@ public interface TbpostMapper {
     List<TbpostDto.SelectResDto> list(TbpostDto.ListReqDto param);
     int pagedListCount(TbpostDto.PagedListReqDto param);
     List<TbpostDto.SelectResDto> pagedList(TbpostDto.PagedListReqDto param);
+    List<TbpostDto.SelectResDto> scrollList(TbpostDto.ScrollListReqDto param);
 }
